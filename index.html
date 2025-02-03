@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fart AI</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000; /* Black background */
+            font-family: 'Arial', sans-serif;
+            color: white; /* White text */
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 10px #00ff00; /* Glowing green text effect */
+        }
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            text-shadow: 0 0 10px #00ff00; /* Neon light effect */
+        }
+        .fart-options {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .fart-options button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: transparent; /* Removed green background */
+            color: white; /* White text */
+            border: 2px solid #00ff00; /* Green border */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .fart-options button:hover {
+            background-color: #333; /* Dark background on hover */
+        }
+        .fart-options button span {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .fart-image {
+            font-size: 6rem; /* Fart emoji size */
+            margin: 20px;
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; /* Neon light effect */
+        }
+    </style>
+</head>
+<body>
+    <h1>FART AI</h1>
+    <div class="top-right">Ca:</div> <!-- Ca: option at the top right -->
+    <div class="fart-options">
+        <button id="loudFart">
+            <span>💥</span>
+            Loud Fart
+        </button>
+        <button id="softFart">
+            <span>🌬️</span>
+            Soft Fart
+        </button>
+        <button id="diarrheaFart">
+            <span>💩</span>
+            Diarrhea Fart
+        </button>
+    </div>
+    <div class="fart-image">💨</div> <!-- Fart emoji in the center -->
+
+    <!-- Hidden audio elements for fart sounds -->
+    <audio id="loudFartSound">
+        <source src="https://www.soundjay.com/human/fart-01.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="softFartSound">
+        <source src="https://www.soundjay.com/human/fart-02.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="diarrheaFartSound">
+        <source src="https://www.soundjay.com/human/fart-03.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Get buttons and audio elements
+        const loudFartButton = document.getElementById('loudFart');
+        const softFartButton = document.getElementById('softFart');
+        const diarrheaFartButton = document.getElementById('diarrheaFart');
+
+        const loudFartSound = document.getElementById('loudFartSound');
+        const softFartSound = document.getElementById('softFartSound');
+        const diarrheaFartSound = document.getElementById('diarrheaFartSound');
+
+        // Adjust volume for loud and soft farts
+        loudFartSound.volume = 1.0; // Full volume for loud fart
+        softFartSound.volume = 0.3; // Lower volume for soft fart
+        diarrheaFartSound.volume = 1.0; // Full volume for diarrhea fart
+
+        // Play sounds when buttons are clicked
+        loudFartButton.addEventListener('click', () => {
+            loudFartSound.currentTime = 0;
+            loudFartSound.play();
+        });
+
+        softFartButton.addEventListener('click', () => {
+            softFartSound.currentTime = 0;
+            softFartSound.play();
+        });
+
+        diarrheaFartButton.addEventListener('click', () => {
+            diarrheaFartSound.currentTime = 0;
+            diarrheaFartSound.play();
+        });
+    </script>
+</body>
+</html>
